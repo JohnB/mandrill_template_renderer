@@ -1,7 +1,8 @@
 # MandrillTemplateRenderer
 
-See the (Mandrill site)[http://help.mandrill.com/entries/21694868-Getting-Started-with-Templates] for details on
-their templates, with merge tags (described here)[http://help.mandrill.com/entries/21678522-How-do-I-use-merge-tags-to-add-dynamic-content-].
+See the [Mandrill site](http://help.mandrill.com/entries/21694868-Getting-Started-with-Templates) for details on
+their templates, with merge tags 
+[described here](http://help.mandrill.com/entries/21678522-How-do-I-use-merge-tags-to-add-dynamic-content-).
 
 ## Installation
 
@@ -37,7 +38,7 @@ Or install it yourself as:
 ```
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/mandrill_template_renderer/fork )
+1. Fork it [here](https://github.com/JohnB/mandrill_template_renderer#fork-destination-box)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
