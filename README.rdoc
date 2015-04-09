@@ -1,0 +1,6 @@
+= MandrillTemplateRenderer
+
+This project rocks and uses MIT-LICENSE.
+
+= Usage
+ MandrillTemplateRenderer.new(template).to_s(hash)
