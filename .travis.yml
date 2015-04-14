@@ -1,0 +1,15 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - 2.0.0
+
+script: 'ruby test/mandrill_template_renderer_test.rb'
+
+notifications:
+  email:
+    recipients:
+      - john.baylor@gmail.com
+    on_failure: change
+    on_success: never
+
