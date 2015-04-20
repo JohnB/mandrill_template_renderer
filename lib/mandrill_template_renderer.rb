@@ -22,7 +22,7 @@ class MandrillTemplateRenderer
       if control_code =~ IF_BLOCK_PREFIX
         result_string += render_to_end_of_block(control_code, static_section, cut_left)
       else
-        result_string += hash[control_code].to_s + static_section.to_s
+        result_string += attempt_to_substitute(control_code, hash) + static_section.to_s
       end
     end
 
@@ -46,11 +46,15 @@ class MandrillTemplateRenderer
           return static_section.to_s
         end
       else
-        result += @hash[control_code].to_s + static_section.to_s
+        result += attempt_to_substitute(control_code, hash) + static_section.to_s
       end
     end
 
     # The list is empty but we never saw a trailing IF_BLOCK_SUFFIX
     raise "Invalid Mandrill template, around #{[key, result, control_code]}"
+  end
+
+  def attempt_to_substitute(control_code, hash)
+    (hash[control_code] || (MANDRILL_PREFIX+control_code+MANDRILL_SUFFIX)).to_s
   end
 end
