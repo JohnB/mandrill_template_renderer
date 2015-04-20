@@ -22,7 +22,7 @@ class MandrillTemplateRenderer
       if control_code =~ IF_BLOCK_PREFIX
         result_string += render_to_end_of_block(control_code, static_section, cut_left)
       else
-        result_string += attempt_to_substitute(control_code, hash) + static_section.to_s
+        result_string += attempt_to_substitute(control_code, @hash) + static_section.to_s
       end
     end
 
@@ -46,7 +46,7 @@ class MandrillTemplateRenderer
           return static_section.to_s
         end
       else
-        result += attempt_to_substitute(control_code, hash) + static_section.to_s
+        result += attempt_to_substitute(control_code, @hash) + static_section.to_s
       end
     end
 
@@ -55,6 +55,6 @@ class MandrillTemplateRenderer
   end
 
   def attempt_to_substitute(control_code, hash)
-    (hash[control_code] || (MANDRILL_PREFIX+control_code+MANDRILL_SUFFIX)).to_s
+    (hash[control_code] || "*|#{control_code}|*").to_s
   end
 end
